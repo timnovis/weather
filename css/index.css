@@ -1,0 +1,97 @@
+@import 'normalize.css';
+
+body {
+    color: #16161d;
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+}
+
+#loading {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 1;
+    z-index: 999;
+    transition: .3s ease all;
+}
+
+#loading .img-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+#loading img {
+    -webkit-animation: spin 9s infinite linear;
+    max-width: 200px;
+}
+
+#loading.is-loading {
+    /* animate */
+}
+
+#loading.disabled {
+    opacity: 0;
+    z-index: -999;
+}
+
+#weatherConditions {
+    padding: 1em;
+    font-size: 1.8em;
+    line-height: 1.8em;
+    letter-spacing: -0.02em;
+}
+
+#weatherConditions .text--sm {
+    font-size: 0.8em;
+    line-height: 1.4em;
+}
+
+.icon {
+    position: absolute;
+    font-size: 10em;
+    z-index: -1;
+    opacity: 0.5;
+    top: 70px;
+    left: -20px;
+}
+
+.icon--clear-day:before {
+    content: "☀️";
+}
+
+.icon--clear-night:before {
+    content: "🌙";
+}
+
+.icon--rain:before {
+    content: "🌧";
+}
+
+.icon--snow:before, .icon--sleet:before {
+    content: "☃️";
+}
+
+.icon--wind:before {
+    content: "🌬";
+}
+
+.icon--fog:before {
+    content: "☁️";
+}
+
+.icon--cloudy:before {
+    content: "☁️";
+}
+
+.icon--partly-cloudy-day:before, .icon--partly-cloudy-night:before {
+    content: '⛅️';
+}
+
+@keyframes spin {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(360deg); }
+}
